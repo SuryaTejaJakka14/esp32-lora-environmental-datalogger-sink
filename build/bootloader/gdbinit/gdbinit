@@ -1,0 +1,2 @@
+source /Users/suryatejajakka/Sink_Logger/build/bootloader/gdbinit/symbols
+source /Users/suryatejajakka/Sink_Logger/build/bootloader/gdbinit/connect
