@@ -5,40 +5,36 @@ environmental sensor network. This repository contains the **sink node**
 firmware — the receiver/base station that collects telemetry transmitted
 by distributed sensor nodes over LoRa.
 
-![PCB Top View](hardware/photos/board-top.jpg)
+![PCB Top View](hardware/Images/PCB_Top.jpg)
 
 ## Overview
 
-[2–3 sentences: what this node does in the network, why a sink/receiver
-architecture was chosen, what problem it solves. Example:]
-
-This node receives environmental telemetry from distributed field sensor
-nodes over a LoRa mesh and aggregates it for storage and downstream
-processing. It's part of a larger low-power environmental monitoring
-system designed for long-term, unattended field deployment.
+[2–3 sentences describing what this node does in the network and why a
+sink/receiver architecture was chosen.]
 
 ## Key features
 
-- Custom LoRa driver written in C (`LoRa.c` / `LoRa.h`) — no off-the-shelf
-  library dependency
-- Built on ESP-IDF (not Arduino) for direct hardware control and
-  lower-level power management
-- Reproducible build environment via `.devcontainer`
-- Custom PCB designed in KiCad (schematic, layout, and BOM included)
+- Custom LoRa driver written in C (`LoRa/LoRa.c`, `LoRa/LoRa.h`) — no
+  off-the-shelf library dependency
+- Built on ESP-IDF (not Arduino) for direct hardware control
+- Reproducible dev environment via `.devcontainer`
+- Custom PCB schematic designed in KiCad
 
 ## Hardware
 
-- **MCU:** ESP32 [exact module/dev board — e.g., ESP32-WROOM-32]
+- **MCU:** ESP32 [exact module — e.g., ESP32-WROOM-32]
 - **Radio:** [LoRa module model, e.g., SX1276/RFM95]
-- **PCB:** Custom-designed in KiCad — see [`/hardware`](hardware/)
-- **Power:** [battery/solar setup if applicable]
+- **PCB:** Custom schematic designed in KiCad — see [`/hardware/schematic`](hardware/schematic)
 
-| Schematic | PCB Layout |
+| PCB — Top | PCB — Bottom |
 |---|---|
-| ![Schematic](hardware/exports/schematic.png) | ![Layout](hardware/exports/pcb-layout-top.png) |
+| ![PCB Top](hardware/Images/PCB_Top.jpg) | ![PCB Bottom](hardware/Images/PCB_Bottom.jpg) |
 
-Full KiCad project files: [`hardware/kicad-project`](hardware/kicad-project)  
-Bill of materials: [`hardware/exports/bill-of-materials.csv`](hardware/exports/bill-of-materials.csv)
+KiCad schematic and project files: [`hardware/schematic`](hardware/schematic)
+
+> **Note:** This repository currently includes the KiCad schematic
+> (`PCB.kicad_sch`) and project file (`PCB.pro`). The PCB layout file
+> will be added once finalized.
 
 ## Repository structure
 
@@ -48,12 +44,15 @@ esp32-lora-environmental-datalogger-sink/
 │   ├── main.c              # Application entry point and sink node logic
 │   └── CMakeLists.txt
 ├── LoRa/
-│   ├── LoRa.c               # Custom LoRa driver implementation
+│   ├── LoRa.c                # Custom LoRa driver implementation
 │   └── LoRa.h
 ├── hardware/
-│   ├── kicad-project/        # KiCad schematic + PCB layout source files
-│   ├── exports/              # Rendered schematic/layout images, BOM
-│   └── photos/                # Physical board photos
+│   ├── schematic/
+│   │   ├── PCB.kicad_sch      # KiCad schematic
+│   │   └── PCB.pro            # KiCad project file
+│   └── Images/
+│       ├── PCB_Top.jpg
+│       └── PCB_Bottom.jpg
 ├── .devcontainer/            # Reproducible dev environment config
 ├── .vscode/                  # Editor configuration
 ├── CMakeLists.txt            # Project-level ESP-IDF build config
@@ -65,10 +64,10 @@ esp32-lora-environmental-datalogger-sink/
 This project uses [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/).
 
 ```bash
-# Set up ESP-IDF environment (v[X.X], if you want to specify)
+# Set up ESP-IDF environment
 . $HOME/esp/esp-idf/export.sh
 
-# Clone and enter the project
+# Clone the project
 git clone https://github.com/SuryaTejaJakka14/esp32-lora-environmental-datalogger-sink.git
 cd esp32-lora-environmental-datalogger-sink
 
@@ -80,19 +79,18 @@ idf.py -p [PORT] flash monitor
 
 ## PCB design (KiCad)
 
-The board was designed from scratch in KiCad to [reason — e.g., "fit a
-compact enclosure for field deployment" / "integrate the LoRa module and
-power regulation on a single board"].
+The schematic was designed from scratch in KiCad to [reason — e.g.,
+"integrate the LoRa module and power regulation for the sink node"].
 
-- Schematic and layout: [`hardware/kicad-project`](hardware/kicad-project)
-- Rendered exports: [`hardware/exports`](hardware/exports)
-- Full build photos and log: [Hackaday.io project](your-hackaday-link-here)
+- Schematic and project files: [`hardware/schematic`](hardware/schematic)
+- Board photos: [`hardware/Images`](hardware/Images)
+- Full build log: [Hackaday.io project](your-hackaday-link-here)
 
 ## What I'd improve next
 
+- Finalize and add the KiCad PCB layout file (`.kicad_pcb`)
 - [TLS/secure comms between nodes]
 - [Cloud sync or database integration for the sink node]
-- [Enclosure/weatherproofing improvements]
 - [Power optimization / sleep mode tuning]
 
 ## Related projects
@@ -106,3 +104,4 @@ Data & IoT Engineer | Embedded Systems | Data Pipelines
 
 - GitHub: [@SuryaTejaJakka14](https://github.com/SuryaTejaJakka14)
 - LinkedIn: [linkedin.com/in/teja-j14](https://www.linkedin.com/in/teja-j14/)
+- Email: sj888@nau.edu
