@@ -15,5 +15,6 @@
     "--background-index",
     "--query-driver=/Users/suryatejajakka/.espressif/tools/riscv32-esp-elf/esp-15.1.0_20250607/riscv32-esp-elf/bin/riscv32-esp-elf-gcc",
     "--compile-commands-dir=${workspaceFolder}/build"
-  ]
+  ],
+  "idf.currentSetup": "/Users/suryatejajakka/Documents/esp/esp-idf"
 }
