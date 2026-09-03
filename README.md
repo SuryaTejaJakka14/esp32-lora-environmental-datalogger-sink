@@ -106,5 +106,3 @@ Data & IoT Engineer | Embedded Systems | Data Pipelines
 
 - GitHub: [@SuryaTejaJakka14](https://github.com/SuryaTejaJakka14)
 - LinkedIn: [linkedin.com/in/teja-j14](https://www.linkedin.com/in/teja-j14/)
-- Hackaday.io: [your-hackaday-profile-link]
-- Email: sj888@nau.edu
