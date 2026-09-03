@@ -113,7 +113,6 @@ sink node.
 
 - Schematic and project files: [`hardware/schematic`](hardware/schematic)
 - Board photos: [`hardware/Images`](hardware/Images)
-- Full build log: [Hackaday.io project](your-hackaday-link-here)
 
 ## What I'd improve next
 
@@ -136,4 +135,3 @@ Data & IoT Engineer | Embedded Systems | Data Pipelines
 
 - GitHub: [@SuryaTejaJakka14](https://github.com/SuryaTejaJakka14)
 - LinkedIn: [linkedin.com/in/teja-j14](https://www.linkedin.com/in/teja-j14/)
-- Email: sj888@nau.edu
